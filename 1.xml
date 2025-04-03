@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Nombre: David Ruiz
+Curso: Daw 1
+Fecha: 02/04/2025
+Ejercicio 1-->
+<!--Factura electronica-->
+<!DOCTYPE factura [
+    <!ELEMENT factura (datos-emisor, datos-cliente, detalle-factura)>
+    <!ATTLIST factura numero CDATA #REQUIRED fecha CDATA #REQUIRED>
+    <!ELEMENT datos-emisor (nombre, cif, telefono)>
+    <!ELEMENT datos-cliente (nombre, cif, telefono)>
+    <!ELEMENT nombre (#PCDATA)>
+    <!ELEMENT cif (#PCDATA)>
+    <!ELEMENT telefono (#PCDATA)>
+    <!ELEMENT detalle-factura (linea+)>
+    <!ATTLIST detalle-factura importe CDATA #REQUIRED>
+    <!ELEMENT linea (descripcion, cantidad, pvp, oferta?)>
+    <!ATTLIST linea codigo-articulo ID #REQUIRED tipo (Libro | DVD | Varios) #REQUIRED>
+    <!ELEMENT descripcion (#PCDATA)>
+    <!ELEMENT cantidad (#PCDATA)>
+    <!ELEMENT pvp (#PCDATA)>
+    <!ELEMENT oferta EMPTY>
+]>
+<factura numero="12345" fecha="2025-04-02">
+    <datos-emisor>
+        <nombre>Librería Leer es de Sabios</nombre>
+        <cif>ES354898765D</cif>
+        <telefono>123456789</telefono>
+    </datos-emisor>
+    
+    <datos-cliente>
+        <nombre>Biblioteca Olivos</nombre>
+        <cif>ES12578543P</cif>
+        <telefono>987654321</telefono>
+    </datos-cliente>
+    
+    <detalle-factura importe="200.00">
+        <linea codigo-articulo="A001" tipo="Libro">
+            <descripcion>"El monje que vendio su ferrari"</descripcion>
+            <cantidad>10</cantidad>
+            <pvp>10.00</pvp>
+        </linea>
+        <linea codigo-articulo="A002" tipo="DVD">
+            <descripcion>"Documental Africa"</descripcion>
+            <cantidad>1</cantidad>
+            <pvp>30.00</pvp>
+            <oferta/>
+        </linea>
+        <linea codigo-articulo="A003" tipo="Varios">
+            <descripcion>Estuches</descripcion>
+            <cantidad>7</cantidad>
+            <pvp>10.00</pvp>
+        </linea>
+    </detalle-factura>
+</factura>

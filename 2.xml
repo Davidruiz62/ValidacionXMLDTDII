@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Nombre: David Ruiz
+Curso: Daw 1
+Fecha: 02/04/2025
+Ejercicio 2
+-->
+<!--Equipos NBA.-->
+<!DOCTYPE EquiposNBA [
+    <!ELEMENT EquiposNBA (equipo | nombre)+>
+    <!ELEMENT nombre (#PCDATA)>
+    <!ELEMENT equipo (nombre, titulos, posicion, quinteto)>
+    <!ATTLIST equipo conferencia CDATA #REQUIRED>
+    <!ELEMENT titulos (#PCDATA)>
+    <!ELEMENT posicion (#PCDATA)>
+    <!ELEMENT quinteto (#PCDATA)>
+]>
+<EquiposNBA>  
+    <equipo conferencia="Oeste">
+        <nombre>Dallas Mavericks</nombre>
+        <titulos>9</titulos>
+        <posicion>9</posicion>
+        <quinteto>Spencer Dinwiddie, Klay Thompsom, Anthony Davis, Dereck Lively y P.J. Washington</quinteto>
+    </equipo>
+
+    <equipo conferencia="Oeste">
+        <nombre>Golden State Warriors</nombre>
+        <titulos>7</titulos>
+        <posicion>9</posicion>
+        <quinteto>Stephen Curry, Klay Thompson, Andrew Wiggins, Draymond Green, Kevon Looney</quinteto>
+    </equipo>
+    <equipo conferencia="Este">
+        <nombre>Boston Celtics</nombre>
+        <titulos>17</titulos>
+        <posicion>1</posicion>
+        <quinteto>Jayson Tatum, Jaylen Brown, Kristaps Porzingis, Jrue Holiday, Al Horford</quinteto>
+    </equipo>
+</EquiposNBA>
